@@ -55,20 +55,13 @@ def solve(image, model, debug=False, method="A", nextChoice="1"):
 
     # ---------------------------------------------------
     # Khởi tạo model Sudoku
-    from solve_sudoku import Sudoku
+    from solve_sudoku import solveSudoku
     import time
-
-    print(board)
     puzzle = board.tolist()
-    mySudoku = Sudoku(puzzle)
-
-
-    # Giải quyết bài toán
-    solution = mySudoku.solve(method, nextChoice, False)
-    # print(solution)
-
+    solveSudoku(puzzle)
+    print(np.array(puzzle))
     # Kết quả
-    temp = np.array(solution)
+    temp = np.array(puzzle)
     # print(temp)
     results = temp - board
     # lặp qua cell locationsvà board

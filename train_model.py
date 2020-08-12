@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report
 
 INIT_LR = 1e-3
 EPOCHS = 20
-BS = 32
+BS = 64
 
 print("[INFO] Load data....")
 ((trainData, trainLabels), (testData, testLabels)) = mnist.load_data()
@@ -30,6 +30,7 @@ testLabels = lb.transform(testLabels)
 opt = Adam(learning_rate=INIT_LR)
 model = sudokuNet.build(width=28, height=28, depth=1, classes=10)
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["acc"])
+
 
 print("[INFO] Training the model....")
 H = model.fit(

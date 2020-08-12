@@ -81,6 +81,7 @@ def extract_digit(cell, debug=False):
     (h, w) = thresh.shape
     # Kiểm tra độ trùng khớp
     overlap = cv2.countNonZero(mask) / float(w * h)
+    # print(cv2.countNonZero(mask))
     if overlap < 0.03:
         return None
 
