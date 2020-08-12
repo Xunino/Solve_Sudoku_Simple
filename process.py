@@ -1,8 +1,8 @@
 from tensorflow.keras.preprocessing.image import img_to_array
 import numpy as np
 import cv2
-from sudoku import Sudoku
 from utils import find_puzzle, extract_digit
+from solve_sudoku import solveSudoku
 
 # ---------------------------------------------------
 def solve(image, model, debug=False, method="A", nextChoice="1"):
@@ -55,11 +55,14 @@ def solve(image, model, debug=False, method="A", nextChoice="1"):
 
     # ---------------------------------------------------
     # Khởi tạo model Sudoku
-    from solve_sudoku import solveSudoku
-    import time
+    # print("Puzzle...")
+    # print(board)
+    # Xử lý
+    print("Solve this puzzle...")
     puzzle = board.tolist()
     solveSudoku(puzzle)
-    print(np.array(puzzle))
+    # print("Puzzle is solved..!")
+    # print(np.array(puzzle))
     # Kết quả
     temp = np.array(puzzle)
     # print(temp)
