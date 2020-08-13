@@ -5,7 +5,7 @@ from utils import find_puzzle, extract_digit
 from solve_sudoku import solveSudoku
 
 # ---------------------------------------------------
-def solve(image, model, debug=False, method="A", nextChoice="1"):
+def solve(image, model, debug=False):
     # tìm kiếm các ô thiếu, sau đó
     (puzzleImage, warped) = find_puzzle(image, debug=debug)
 
@@ -55,10 +55,10 @@ def solve(image, model, debug=False, method="A", nextChoice="1"):
 
     # ---------------------------------------------------
     # Khởi tạo model Sudoku
-    # print("Puzzle...")
-    # print(board)
+    print("[INFO] Puzzle...")
+    print(board)
     # Xử lý
-    print("Solve this puzzle...")
+    print("[INFO] Solve this puzzle...")
     puzzle = board.tolist()
     solveSudoku(puzzle)
     # print("Puzzle is solved..!")
